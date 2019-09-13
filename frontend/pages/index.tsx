@@ -4,10 +4,11 @@ import { Upload, message, Button, Icon } from "antd";
 import { UploadProps } from "antd/lib/upload/interface";
 
 const props: UploadProps = {
-    name: "file",
-    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+    name: "files",
+    // URL to the (PHP) upload endpoint
+    action: "http://localhost:4000/",
     headers: {
-        authorization: "authorization-text",
+        // authorization: "authorization-text",
     },
     onChange(info) {
         if (info.file.status !== "uploading") {
@@ -16,6 +17,7 @@ const props: UploadProps = {
         if (info.file.status === "done") {
             message.success(`${info.file.name} file uploaded successfully`);
         } else if (info.file.status === "error") {
+            console.error(info);
             message.error(`${info.file.name} file upload failed.`);
         }
     },
