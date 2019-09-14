@@ -11,7 +11,7 @@ Frontend needs dependencies installed:
 cd frontend && yarn
 ```
 
-Backend could be ran as is vie built-in PHP server or built into a Docker image.
+Backend could be ran as is with built-in PHP server or built into a Docker image.
 
 ## Running
 
